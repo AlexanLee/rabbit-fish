@@ -46,9 +46,12 @@ public class Toutiao {
                     System.out.println(request.getContentType());
                     JSONObject jsonObject = JSON.parseObject(result);
                     curTime = parseCursor(jsonObject);
-                    if (!Objects.equals(curTime, String.valueOf(nowMills))) {
+                    boolean hasMore = jsonObject.getJSONObject("data").getBoolean("has_more");
+                    if (hasMore
+                            ||(!hasMore
+                                &&!Objects.equals(0L,jsonObject.getJSONObject("data").getLong("max_cursor")))){
                         try {
-                            File picFile = new File(String.format("/data/toutiao/%sinfo%s.txt", i, curTime));
+                            File picFile = new File(String.format("/data/toutiao/%sinfo%s.json", i, curTime));
                             try {
                                 if (!picFile.getParentFile().exists()) {
                                     picFile.getParentFile().mkdirs();
@@ -63,7 +66,6 @@ public class Toutiao {
                             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
                             bufferedWriter.write(jsonObject.toString());
                             bufferedWriter.close();
-                            boolean hasMore = jsonObject.getJSONObject("data").getBoolean("has_more");
                             if(!hasMore){
                                 num--;
                             }
@@ -90,8 +92,7 @@ public class Toutiao {
             &&StringUtils.isNotEmpty(result.toJSONString())){
             boolean hasMore = result.getJSONObject("data").getBoolean("has_more");
             System.out.println("has more:"+hasMore);
-            if(hasMore
-                    ||!Objects.equals(0L,result.getJSONObject("data").getLong("max_cursor"))){
+            if(hasMore){
                 maxCursor =String.valueOf(result.getJSONObject("data").getLong("max_cursor")+1);
             }
         }

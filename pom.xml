@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.apache.maven.enforcer</groupId>
+        <artifactId>enforcer</artifactId>
+        <version>1.3.1</version>
+    </parent>
+
     <groupId>rabbit-fish</groupId>
     <artifactId>com.rabbit.fish</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -29,6 +35,9 @@
         <commons-lang.version>2.6</commons-lang.version>
         <jsoup.version>1.10.2</jsoup.version>
         <javacsv.version>2.0</javacsv.version>
+        <spark.version>2.1.0</spark.version>
+        <hadoop.version>2.7.3</hadoop.version>
+        <hadoop.core>1.2.1</hadoop.core>
     </properties>
 
     <dependencies>
@@ -96,6 +105,29 @@
             <groupId>net.sourceforge.javacsv</groupId>
             <artifactId>javacsv</artifactId>
             <version>${javacsv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>${hadoop.core}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.4</version>
         </dependency>
 
     </dependencies>
