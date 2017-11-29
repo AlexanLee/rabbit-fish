@@ -27,15 +27,11 @@ public class Controller {
          * URLs that are fetched and then the crawler starts following links
          * which are found in these pages
          */
-        controller.addSeed("http://toutiao.com/dongtai/2/");
+//        controller.addSeed("http://toutiao.com/dongtai/2/");
 //        controller.addSeed("http://toutiao.com");
-//        controller.addSeed("http://www.ics.uci.edu/~welling/");
+        controller.addSeed("http://www.ics.uci.edu/~welling/");
 //        controller.addSeed("http://www.ics.uci.edu/");
 
-        /*
-         * Start the crawl. This is a blocking operation, meaning that your code
-         * will reach the line after this only when crawling is finished.
-         */
         controller.start(MyCrawler.class, numberOfCrawlers);
     }
 }

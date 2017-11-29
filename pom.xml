@@ -38,9 +38,15 @@
         <spark.version>2.1.0</spark.version>
         <hadoop.version>2.7.3</hadoop.version>
         <hadoop.core>1.2.1</hadoop.core>
+        <webcollector.version>2.09</webcollector.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.edu.hfut.dmic.webcollector</groupId>
+            <artifactId>WebCollector</artifactId>
+            <version>${webcollector.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.mks.api</groupId>
             <artifactId>mksapi-jar</artifactId>
@@ -128,6 +134,12 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
             <version>3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
         </dependency>
 
     </dependencies>

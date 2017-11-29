@@ -1,5 +1,6 @@
 package com.rabbit.fish.crawler;
 
+import java.net.UnknownHostException;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -30,5 +31,18 @@ public class Test {
 
         System.out.println(Objects.equals(it1,integer1));
 
+        System.out.println(System.getProperty("java.io.tmpdir", "/tmp"));
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("java.io.tmpdir"));
+        System.out.println(System.getProperty("user.dir"));
+
+        try {
+            System.out.println(java.net.InetAddress.getLocalHost().getHostAddress());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        double a=0.24;
+        double b=0.35;
+        System.out.println(a*b);
     }
 }

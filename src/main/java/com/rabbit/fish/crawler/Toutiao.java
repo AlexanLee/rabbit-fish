@@ -51,7 +51,7 @@ public class Toutiao {
                             ||(!hasMore
                                 &&!Objects.equals(0L,jsonObject.getJSONObject("data").getLong("max_cursor")))){
                         try {
-                            File picFile = new File(String.format("/data/toutiao/%sinfo%s.json", i, curTime));
+                            File picFile = new File(String.format("/data/toutiao/%s_info_%s.json", i, curTime));
                             try {
                                 if (!picFile.getParentFile().exists()) {
                                     picFile.getParentFile().mkdirs();
