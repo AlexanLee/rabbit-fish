@@ -9,7 +9,9 @@ import org.apache.http.protocol.HTTP;
 import java.util.Date;
 
 /**
- * Created by lijianli on 2017/3/1.
+ *
+ * @author lijianli
+ * @date 2017/3/1
  */
 public class ToutiaoDongtai {
 
@@ -21,13 +23,12 @@ public class ToutiaoDongtai {
     public static void main(String[] args){
         System.out.println("now :"+nowMills);
         ufoHttp.setMethod("GET");
-//        ufoHttp.addHeader("Cookie","JSESSIONID=6AF4E659A946BD78ECB5704F7538D243");
         ufoHttp.addHeader(HTTP.CONN_DIRECTIVE, HTTP.CONN_CLOSE);
         ufoHttp.setConnectTimeout(60);
         SimpleHttpResult request = SimpleHttpUtils.httpRequest(ufoHttp);
         System.out.println(request.getStatusCode());
         System.out.println(request.getContent());
-        System.out.println("end :"+new Date().getTime());
+        System.out.println("end :"+System.currentTimeMillis());
 
     }
 }

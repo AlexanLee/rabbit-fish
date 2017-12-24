@@ -18,7 +18,9 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Created by lijianli on 2016/12/6.
+ *
+ * @author lijianli
+ * @date 2016/12/6
  */
 public class Toutiao {
     private static Date now = new Date();
