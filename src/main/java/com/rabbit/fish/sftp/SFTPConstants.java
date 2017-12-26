@@ -1,7 +1,9 @@
 package com.rabbit.fish.sftp;
 
 /**
- * Created by lijianli on 2017/8/11.
+ *
+ * @author lijianli
+ * @date 2017/8/11
  */
 public interface SFTPConstants {
     String SFTP_REQ_HOST="114.251.243.97";

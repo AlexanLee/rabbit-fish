@@ -11,7 +11,9 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * Created by lijianli on 2017/8/11.
+ *
+ * @author lijianli
+ * @date 2017/8/11
  */
 public class SftpTest {
     static Session session = null;

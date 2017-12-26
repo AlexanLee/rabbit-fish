@@ -39,6 +39,7 @@
         <hadoop.version>2.7.3</hadoop.version>
         <hadoop.core>1.2.1</hadoop.core>
         <webcollector.version>2.09</webcollector.version>
+        <activemq.version>5.9.0</activemq.version>
     </properties>
 
     <dependencies>
@@ -146,7 +147,7 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
-            <version>5.9.0</version>
+            <version>${activemq.version}</version>
         </dependency>
 
     </dependencies>
