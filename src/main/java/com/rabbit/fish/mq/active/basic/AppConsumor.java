@@ -1,4 +1,4 @@
-package com.rabbit.fish.mq;
+package com.rabbit.fish.mq.active.basic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
